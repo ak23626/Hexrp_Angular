@@ -2,72 +2,56 @@
 <section fxLayout="column" fxFlexAlign="stretch" class="home-section-main">
     <div fxFlexAlign="center">
     </div>  
-<mat-grid-list [cols]="breakpointnews" (window:resize)="onResizeNewsBox($event)" rowHeight='430px'>
-  <mat-grid-tile>
+<mat-grid-list [cols]="breakpointnews" (window:resize)="onResizeNewsBox($event)" rowHeight='400px'>
+  <mat-grid-tile >
     <div class="news_img">
-      <img src="../../assets/img/Bitcoin_is_rising.jpg">
+      <img [src]=news_data[0].originalImageUrl>
       <h3>
-        <b>Bitcoin is Rising...</b>
+        <a [href]=news_data[0].url target="_blank">{{news_data[0].title}}</a>
       </h3>
       <p>
-        15 Hrs Ago | by Aadil Kazi
+        by {{news_data[0].sourceDomain}}
       </p>
-      <div class="news_descrpt">
-        <p>
-          As a new concept within the industry, blockchain bridges possess a lot of promise for the blockchain and crypto landscape and for the future of the industry.
-        </p>
-      </div>
+
     </div>
   </mat-grid-tile>
   
   <mat-grid-tile>
     <div class="news_img">
-      <img src="../../assets/img/Bitcoin_is_rising.jpg">
+      <img [src]=news_data[1].originalImageUrl>
       <h3>
-        <b>Bitcoin is Rising...</b>
+        <a [href]=news_data[1].url target="_blank">{{news_data[1].title}}</a>
       </h3>
       <p>
-        15 Hrs Ago | by Aadil Kazi
+        {{news_data[1].sourceDomain}}
       </p>
-      <div class="news_descrpt">
-        <p>
-          As a new concept within the industry, blockchain bridges possess a lot of promise for the blockchain and crypto landscape and for the future of the industry.
-        </p>
-      </div>
+
     </div>
   </mat-grid-tile>
   
   <mat-grid-tile>
     <div class="news_img">
-      <img src="../../assets/img/Bitcoin_is_rising.jpg">
+      <img [src]=news_data[2].originalImageUrl>
       <h3>
-        <b>Bitcoin is Rising...</b>
+        <a [href]=news_data[2].url target="_blank">{{news_data[2].title}}</a>
       </h3>
       <p>
-        15 Hrs Ago | by Aadil Kazi
+        {{news_data[2].sourceDomain}}
       </p>
-      <div class="news_descrpt">
-        <p>
-          As a new concept within the industry, blockchain bridges possess a lot of promise for the blockchain and crypto landscape and for the future of the industry.
-        </p>
-      </div>
+
     </div>
   </mat-grid-tile>
   
   <mat-grid-tile>
     <div class="news_img">
-      <img src="../../assets/img/Bitcoin_is_rising.jpg">
+      <img [src]=news_data[3].originalImageUrl>
       <h3>
-        <b>Bitcoin is Rising...</b>
+        <a [href]=news_data[3].url target="_blank">{{news_data[3].title}}</a>
       </h3>
       <p>
-        15 Hrs Ago | by Aadil Kazi
+        {{news_data[3].sourceDomain}}
       </p>
-      <div class="news_descrpt">
-        <p>
-          As a new concept within the industry, blockchain bridges possess a lot of promise for the blockchain and crypto landscape and for the future of the industry.
-        </p>
-      </div>
+
     </div>
   </mat-grid-tile>
 </mat-grid-list>
@@ -87,8 +71,17 @@
   </h2>
     <mat-tab-group (selectedTabChange) = "executeSelectedChange($event)">
       <mat-tab label="Bitcoin"> 
-        <p>We are going to use different material components to create nice looking angular app.</p> 
+        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='400px'>
+          <mat-grid-tile>
+            <div>
+
+            </div>
+          </mat-grid-tile>
+
+        </mat-grid-list>
       </mat-tab>
+
+      
       <mat-tab label="Ethereum">
         <p>We will consume our .NET Core application. Basically, we will create complete CRUD client app.</p>
       </mat-tab>

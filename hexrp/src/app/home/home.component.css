@@ -4,6 +4,7 @@
 
 mat-tab-group {
     text-align: center;
+    z-index: -1;
 }
  
 mat-tab-group p {
@@ -31,7 +32,7 @@ mat-tab-group p {
     margin-top: 80px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .home-section-main{
         padding:0 10px;
         /* background-color: aliceblue; */
@@ -42,9 +43,11 @@ mat-tab-group p {
   }
 
 
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 501px) {
     .news_img{
         padding:0 10px;
+            /* margin: 5px; */
+        height: 360px;
     }
 
     .news_img:hover{
@@ -102,8 +105,13 @@ mat-tab-group p {
 
 .news_img img{
     width: 100%;
+    height: 200px;
 }
 
+.news_img a{
+    color: black;
+    text-decoration: none;
+}
 
 
 .news_img p{
