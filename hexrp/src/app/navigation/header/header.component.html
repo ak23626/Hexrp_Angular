@@ -1,0 +1,28 @@
+<div layout='column'><mat-toolbar class="mat-toolbar-style header-main-section" >
+    
+        <div fxHide.gt-xs>
+            <button mat-icon-button (click)="onToggleSidenav()">
+                <mat-icon style="font-size: 35px;">menu</mat-icon>
+            </button>
+        </div>
+        <div>
+            <a routerLink="/home"><img src="../../../assets/checkthis.png"  height="80px" width="100px"></a>
+        </div>
+        <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+            <ul fxLayout fxLayoutGap="30px" class="navigation-items" style="font-size: 0.85em;">
+                <li>
+                    <a routerLink="/coin_details">Coin Details</a>
+                </li>
+                <li>
+                    <a routerLink="/coin_compare">Coin Compare</a>
+                </li>
+                <li>
+                    <a routerLink="/news">News</a>
+                </li>
+                <li>
+                    <a routerLink="/blogs">Blogs</a>
+                </li>
+            </ul>
+        </div>
+      </mat-toolbar>
+      </div>
