@@ -30,6 +30,19 @@ mat-tab-group p {
     padding:0 70px;
     /* background-color: aliceblue; */
     margin-top: 80px;
+    
+}
+
+.coin_statistics{
+   padding-left: 20px; 
+   
+}
+
+.table-coin p{
+    font-family:serif;
+    font-size:1em;
+    text-align: justify !important;
+    
 }
 
 @media screen and (max-width: 500px) {
@@ -38,7 +51,9 @@ mat-tab-group p {
         /* background-color: aliceblue; */
         margin-top: 80px;
     }
-
+    highcharts-chart{
+        height: 300px;
+    }
 
   }
 
@@ -124,3 +139,26 @@ mat-tab-group p {
     font-size: 1em;
 }
 
+.main-section-top-10-coins{
+    min-height: 500px;
+}
+
+.table-coin {
+    width: 100%;
+  }
+
+.coin_statistics {
+    margin-top : 0
+}
+
+.about-us-banner{
+    background-image: url("../../assets/img/Bitcoin_is_rising.jpg");
+    background-color: aliceblue;
+    height: 400px;
+    width: 91%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    margin: 0%;
+}

@@ -1,59 +1,59 @@
 	
 <section fxLayout="column" fxFlexAlign="stretch" class="home-section-main">
-    <div fxFlexAlign="center">
-    </div>  
+  <div fxFlexAlign="center">
+  </div>  
 <mat-grid-list [cols]="breakpointnews" (window:resize)="onResizeNewsBox($event)" rowHeight='400px'>
-  <mat-grid-tile >
-    <div class="news_img">
-      <img [src]=news_data[0].originalImageUrl>
-      <h3>
-        <a [href]=news_data[0].url target="_blank">{{news_data[0].title}}</a>
-      </h3>
-      <p>
-        by {{news_data[0].sourceDomain}}
-      </p>
+<mat-grid-tile >
+  <div class="news_img">
+    <img [src]=news_data[0].originalImageUrl>
+    <h3>
+      <a [href]=news_data[0].url target="_blank">{{news_data[0].title}}</a>
+    </h3>
+    <p>
+      by {{news_data[0].sourceDomain}}
+    </p>
 
-    </div>
-  </mat-grid-tile>
-  
-  <mat-grid-tile>
-    <div class="news_img">
-      <img [src]=news_data[1].originalImageUrl>
-      <h3>
-        <a [href]=news_data[1].url target="_blank">{{news_data[1].title}}</a>
-      </h3>
-      <p>
-        {{news_data[1].sourceDomain}}
-      </p>
+  </div>
+</mat-grid-tile>
 
-    </div>
-  </mat-grid-tile>
-  
-  <mat-grid-tile>
-    <div class="news_img">
-      <img [src]=news_data[2].originalImageUrl>
-      <h3>
-        <a [href]=news_data[2].url target="_blank">{{news_data[2].title}}</a>
-      </h3>
-      <p>
-        {{news_data[2].sourceDomain}}
-      </p>
+<mat-grid-tile>
+  <div class="news_img">
+    <img [src]=news_data[1].originalImageUrl>
+    <h3>
+      <a [href]=news_data[1].url target="_blank">{{news_data[1].title}}</a>
+    </h3>
+    <p>
+      {{news_data[1].sourceDomain}}
+    </p>
 
-    </div>
-  </mat-grid-tile>
-  
-  <mat-grid-tile>
-    <div class="news_img">
-      <img [src]=news_data[3].originalImageUrl>
-      <h3>
-        <a [href]=news_data[3].url target="_blank">{{news_data[3].title}}</a>
-      </h3>
-      <p>
-        {{news_data[3].sourceDomain}}
-      </p>
+  </div>
+</mat-grid-tile>
 
-    </div>
-  </mat-grid-tile>
+<mat-grid-tile>
+  <div class="news_img">
+    <img [src]=news_data[2].originalImageUrl>
+    <h3>
+      <a [href]=news_data[2].url target="_blank">{{news_data[2].title}}</a>
+    </h3>
+    <p>
+      {{news_data[2].sourceDomain}}
+    </p>
+
+  </div>
+</mat-grid-tile>
+
+<mat-grid-tile>
+  <div class="news_img">
+    <img [src]=news_data[3].originalImageUrl>
+    <h3>
+      <a [href]=news_data[3].url target="_blank">{{news_data[3].title}}</a>
+    </h3>
+    <p>
+      {{news_data[3].sourceDomain}}
+    </p>
+
+  </div>
+</mat-grid-tile>
 </mat-grid-list>
 
 
@@ -61,54 +61,288 @@
 
 
 <!-- <mat-grid-list class="about-us">
-  <mat-grid-tile>
+<mat-grid-tile>
 
-  </mat-grid-tile>
+</mat-grid-tile>
 </mat-grid-list> -->
 <div class="main-section-top-10-coins">
-  <h2 style="font-family:serif; text-align: center;">
-    Top 10 Coins
-  </h2>
-    <mat-tab-group (selectedTabChange) = "executeSelectedChange($event)">
-      <mat-tab label="Bitcoin"> 
-        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='400px'>
-          <mat-grid-tile>
-            <div>
-
+<h2 style="font-family:serif; text-align: left;margin-top:30px">
+  Top 10 Coins
+</h2>
+<hr>
+  <mat-tab-group (selectedTabChange) = "executeSelectedChange($event)">
+    <mat-tab label="Bitcoin"> 
+      <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='650px'>
+        <mat-grid-tile>
+          <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions_btc"
+          style="width: 100%; height: 600px; display: block;"></highcharts-chart>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="table-coin">
+              <h2 class='coin_statistics'>
+                  Details
+              </h2>
+                <p style="text-align: left;">
+                   Bitcoin is the first successful internet money based on peer-to-peer technology;
+                    whereby no central bank or authority is involved in the transaction and production of the Bitcoin currency.
+                     It was created by an anonymous individual/group under the name, Satoshi Nakamoto.
+                      The source code is available publicly as an open source project, anybody can look at it and be part of the developmental process.
+                      Bitcoin is changing the way we see money as we speak. The idea was to produce a means of exchange, 
+                      independent of any central authority, that could be transferred electronically in a secure, verifiable and immutable way.
+                       It is a decentralized peer-to-peer internet currency making mobile payment easy, very low transaction fees, protects your identity,
+                        and it works anywhere all the time with no central authority or banks.\r\n\r\nBitcoin is design to have only 21 million BTC ever 
+                        created, thus making it a deflationary currency. Bitcoin uses the SHA-256 hashing algorithm with an average transaction confirmation
+                         time of 10 minutes.</p>
             </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Ethereum">
+        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='750px'>
+            <mat-grid-tile>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions_eth"
+          style="width: 100%; height: 600px; display: block;"></highcharts-chart>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="table-coin">
+                <h2 class='coin_statistics'>
+                    Details
+                </h2>
+                  <p style="text-align: left;">
+                      Ethereum is a smart contract platform that enables developers to build tokens and decentralized applications (dapps).
+                       ETH is the native currency for the Ethereum platform and also works as the transaction fees to miners on the Ethereum 
+                       network. Ethereum is the pioneer for blockchain based smart contracts.
+                        Smart contract is essentially a computer code that runs exactly as programmed without any possibility of downtime,
+                         censorship, fraud or third-party interference. It can facilitate the exchange of money, content, property, shares,
+                          or anything of value. When running on the blockchain a smart contract becomes like a self-operating computer program 
+                          that automatically executes when specific conditions are met. Ethereum allows programmers to run 
+                          complete-turing smart contracts that is capable of any customizations.
+                           Rather than giving a set of limited operations, Ethereum allows developers to have complete control
+                            over customization of their smart contract, giving developers the power to build unique and innovative applications.
+                             Ethereum being the first blockchain based smart contract platform, 
+                      they have gained much popularity, resulting in new competitors fighting for market share.  
+                  </p>
+              </div>
           </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Ripple">
+        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='750px'>
+          <mat-grid-tile>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions_xrp"
+          style="width: 100%; height: 600px; display: block;"></highcharts-chart>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="table-coin">
+                <h2 class='coin_statistics'>
+                    Details
+                </h2>
+                  <p style="text-align: left;">
+                      Ripple is the catchall name for the cryptocurrency platform, the transactional protocol for which is actually XRP, 
+                      in the same fashion as Ethereum is the name for the platform that facilitates trades in Ether.
+                       Like other cryptocurrencies, Ripple is built atop the idea of a distributed ledger network which requires various parties 
+                       to participate in validating transactions, rather than any singular centralized authority. That facilitates transactions all 
+                       over the world, and transfer fees are far cheaper than the likes of bitcoin. Unlike other cryptocurrencies, XRP transfers are
+                        effectively immediate, requiring no typical confirmation time.\r\n\r\nRipple was originally founded by a single company,
+                        Ripple Labs, and continues to be backed by it, rather than the larger network of developers that continue
+                      bitcoin’s development. It also doesn’t have a fluctuating amount of its currency in existence.
+                       Where bitcoin has a continually growing pool with an eventual maximum, and Ethereum theoretically has no limit,
+                        Ripple was created with all of its 100 billion XRP tokens right out of the gate. That number is 
+                      maintained with no mining and most of the tokens are owned and held by Ripple Labs itself — around 60 billion at the latest count.
+                  </p>
+              </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Bitcoin Cash">
+        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='650px'>
+          <mat-grid-tile>
+       <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions_btcash"
+          style="width: 100%; height: 600px; display: block;"></highcharts-chart>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="table-coin">
+                <h2 class='coin_statistics'>
+                    Details
+                </h2>
+                  <p style="text-align: left;">
+                      Bitcoin Cash is a hard fork of Bitcoin with a protocol upgrade to fix on-chain capacity.
+                       Bitcoin Cash intends to be a Bitcoin without Segregated Witness (SegWit) as soft fork, 
+                       where upgrades of the protocol are done mainly through hard forks and without changing
+                        the original economic rules of the Bitcoin.\r\n\r\nBitcoin Cash (BCH) is released on 1st August 2017 
+                        as an upgraded version of the original Bitcoin Core software. The main upgrade is the increase in the block size
+                         limit from 1MB to 8MB. This effectively allows miners on the BCH chain to process up to 8 times more payments
+                          per second in comparison to Bitcoin. This makes for faster, cheaper transactions and a much smoother user experience.
+                          Why was Bitcoin Cash Created? 
+                      The main objective of Bitcoin Cash is to to bring back the essential qualities of money inherent in the original Bitcoin software.   
+                  </p>
+              </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="EOS">
+        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='650px'>
+          <mat-grid-tile>
+       <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions_eos"
+          style="width: 100%; height: 600px; display: block;"></highcharts-chart>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="table-coin">
+                <h2 class='coin_statistics'>
+                    Details
+                </h2>
+                  <p style="text-align: left;">
+                      What Is EOS?\r\nEOS has always been one of the most hype over ICO and now a smart contract platform. 
+                      When it was announced by founder Dan Larimer in New York City in May 2017, a giant jumbotron advertisement could
+                       be seen glowing over Times Square. In the first 5 days of their ICO token sale, EOS raised an unprecedented $185 million
+                        in ETH — all without having any kind of product or service yet. EOS claims to be “the most powerful infrastructure
+                         for decentralized applications.” Basically, EOS is (or, rather, will be) a blockchain technology much like
+                         Ethereum. They plan to create their own blockchain with a long list of impressive features.
+                          Some are even calling EOS the “Ethereum killer.” But along with all the hype and excitement about EOS,
+                           there’s also a large amount of skepticism coming from the crypto community. EOS has big plans. 
+                           It will be a software that will act as a decentralized operating system.
+                       Developers can then build applications on the EOS software. It will be highly scalable, flexible, and usable.    
+                  </p>
+              </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Cardano">
+        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='700px'>
+          <mat-grid-tile>
+       <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions_card"
+          style="width: 100%; height: 600px; display: block;"></highcharts-chart>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="table-coin">
+                <h2 class='coin_statistics'>
+                    Details
+                </h2>
+                  <p style="text-align: left;">
+                      Cardano is a decentralised platform that will allow complex programmable transfers of value in a secure and scalable fashion. 
+                      It is one of the first blockchains to be built in the highly secure Haskell programming language. Cardano is developing a 
+                      smart contract platform which seeks to deliver more advanced features than any protocol previously developed.
+                       It is the first blockchain platform to evolve out of a scientific philosophy and a research-first driven approach.
+                        The development team consists of a large global collective of expert engineers and researchers. The Cardano project
+                         is different from other blockchain projects as it openly addresses the need for regulatory oversight whilst maintaining
+                          consumer privacy and protections through an innovative software architecture. The protocol features a layered blockchain
+                           software stack that is flexible, scalable, and is being developed with the most rigorous academic and commercial software 
+                           standards in the industry. Cardano will use a democratic
+                       governance system that allows the project to evolve over time, and fund itself sustainably through a visionary treasury system.
+                      </p>
+              </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Litecoin">
+        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='650px'>
+          <mat-grid-tile>
+       <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions_ltc"
+          style="width: 100%; height: 600px; display: block;"></highcharts-chart>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="table-coin">
+                <h2 class='coin_statistics'>
+                    Details
+                </h2>
+                  <p style="text-align: left;">
+                      Litecoin is a peer-to-peer cryptocurrency created by Charlie Lee. It was created based on the
+                      Bitcoin protocol but differs in terms of the hashing algorithm used. Litecoin uses the memory intensive
+                      Scrypt proof of work mining algorithm. Scrypt allows consumer-grade hardware such as GPU to mine those coins.
+                      Why Litecoin? Litecoin is a cryptocurrency that has evolved from Bitcoin after its own popularity in the industry, 
+                      this alternative, or ‘altcoin’ has emerged to allow investors to diversify their digital currency package, 
+                      according to Investopedia. Litecoin is one of the most prominent altcoins and was created by former Google employee
+                       and Director of Engineering at Coinbase, Charlie Lee. Litecoin was the first to alter Bitcoin and the most significant 
+                      difference is that it takes 2.5 minutes for Litecoin to generate a block, or transaction, in comparison to Bitcoin's 10 minutes. 
 
-        </mat-grid-list>
-      </mat-tab>
+                      </p>
+              </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Stellar">
+        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='650px'>
+          <mat-grid-tile>
+       <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions_st"
+          style="width: 100%; height: 600px; display: block;"></highcharts-chart>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="table-coin">
+                <h2 class='coin_statistics'>
+                    Details
+                </h2>
+                  <p style="text-align: left;">
+                      The Stellar network is an open source, distributed, and community owned network used to facilitate cross-asset transfers of value. 
+                      Stellar aims to help facilitate cross-asset transfer of value at a fraction of a penny while aiming to be an open 
+                      financial system that gives people of all income levels access to low-cost financial services. Stellar can handle exchanges 
+                      between fiat-based currencies and between cryptocurrencies. Stellar.org, the organization that supports Stellar, 
+                      is centralized like XRP and meant to handle cross platform transactions and micro transactions like XRP. However,
+                       unlike Ripple, Stellar.org is non-profit and their platform itself is open source and decentralized. Stellar was founded
+                        by Jed McCaleb in 2014. Jed McCaleb is also the founder of Mt. Gox and co-founder of Ripple, launched the network system 
+                        Stellar with former lawyer Joyce Kim. Stellar is also a payment technology
+                       that aims to connect financial institutions and drastically reduce the cost and time required for cross-border transfers.    
+                  </p>
+              </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Binance Coin">
+        <mat-grid-list [cols]="breakpointgraph" (window:resize)="onResizegraphBox($event)" rowHeight='650px'>
+          <mat-grid-tile>
+       <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions_bnc"
+          style="width: 100%; height: 600px; display: block;"></highcharts-chart>
+        </mat-grid-tile>        <mat-grid-tile>
+            <div class="table-coin">
+                <h2 class='coin_statistics'>
+                    Details
+                </h2>
+                  <p style="text-align: left;">
+                      Binance Coin (BNB) is an exchange-based token created and issued by the cryptocurrency exchange Binance. Initially created on the Ethereum blockchain as an ERC-20 token in July 2017, BNB was migrated over to Binance Chain in February 2019 and became the native coin of the Binance Chain.
 
+                      Binance Coin has seen massive growth in interest throughout the years. Several rounds of token burn events have appreciated BNB price and pushed it up as one of the top-10 cryptocurrencies by market capitalization. BNB can be traded in over 300 trading pairs across 120 exchanges tracked. 
+                      Binance is the cryptocurrency exchange founded by Changpeng Zhao and He Yi in July 2017. Binance started with an Initial Coin Offering (ICO) and has since grown into one of the largest global cryptocurrency exchanges, both in terms of volume traded and market share by web traffic.  
+                  </p>
+              </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+
+<div class="main-section-top-10-coins">
+    <h2 style="font-family:serif; text-align: left;margin-top:30px">
+       Know About Hexrp!
+      </h2>
+      <hr>
+      <mat-grid-list [cols]="breakpointaboutus" (window:resize)="onResizeaboutusBox($event)" rowHeight='300px'>
+        <mat-grid-tile [colspan]='6'>
+            <div class="write-up-about-us" style="display: inline-block;">
+                <p style="text-align: left;font-family:serif; text-align: left;margin-top:30px">
+                  Binance Coin (BNB) is an exchange-based token created and issued by the cryptocurrency exchange Binance. Initially created on the Ethereum blockchain as an ERC-20 token in July 2017, BNB was migrated over to Binance Chain in February 2019 and became the native coin of the Binance Chain.
+        
+                  Binance Coin has seen massive growth in interest throughout the years. Several rounds of token burn events have appreciated BNB price and pushed it up as one of the top-10 cryptocurrencies by market capitalization. BNB can be traded in over 300 trading pairs across 120 exchanges tracked. 
+                  Binance is the cryptocurrency exchange founded by Changpeng Zhao and He Yi in July 2017. Binance started with an Initial Coin Offering (ICO) and has since grown into one of the largest global cryptocurrency exchanges, both in terms of volume traded and market share by web traffic.  
+                  Binance Coin (BNB)
+                  Binance is the cryptocurrency exchange founded by Changpeng Zhao and He Yi in July 2017. Binance started with an Initial Coin Offering (ICO) and has since grown into one of the largest global cryptocurrency exchanges, both in terms of volume traded and market share by web traffic.  
+                  Binance Coin (BNB)
+                </p>
+              </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]='4'>
+            <div class="about-us-banner">
+              </div>
+              </mat-grid-tile>
+      </mat-grid-list>
       
-      <mat-tab label="Ethereum">
-        <p>We will consume our .NET Core application. Basically, we will create complete CRUD client app.</p>
-      </mat-tab>
-      <mat-tab label="Ripple">
-        <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-      </mat-tab>
-      <mat-tab label="Bitcoin Cash">
-        <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-      </mat-tab>
-      <mat-tab label="EOS">
-        <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-      </mat-tab>
-      <mat-tab label="Cardano">
-        <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-      </mat-tab>
-      <mat-tab label="Litecoin">
-        <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-      </mat-tab>
-      <mat-tab label="Ripple">
-        <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-      </mat-tab>
-      <mat-tab label="Stellar">
-        <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-      </mat-tab>
-      <mat-tab label="Binance Coin">
-        <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-      </mat-tab>
-    </mat-tab-group>
-  </div>
-  </section>
+      
+</div>
+
+<div class="main-section-top-10-coins">
+    <h2 style="font-family:serif; text-align: left;margin-top:30px">
+        We Write Blogs Too!
+       </h2>
+       <hr>
+</div>
+
+</section>
