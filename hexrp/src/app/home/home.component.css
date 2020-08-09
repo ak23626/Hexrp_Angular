@@ -51,7 +51,7 @@ mat-tab-group p {
         /* background-color: aliceblue; */
         margin-top: 80px;
     }
-    highcharts-chart{
+    #highcharts-chart{
         height: 300px;
     }
 

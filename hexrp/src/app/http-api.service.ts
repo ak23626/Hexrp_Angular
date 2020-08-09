@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +10,7 @@ export class HttpApiService {
   get(url: any, arg1: {}) {
     throw new Error("Method not implemented.");
   }
-
+// private posts: Post[] = [];
   constructor(private httpClient: HttpClient) { }
 
 
@@ -23,6 +25,10 @@ headers = headers.append('x-api-key', '77e7e18e26bbeb9c617d502e8a9e5f23');
 
   public getGraphBitcoin(id) {
     return this.httpClient.get("https://api.coingecko.com/api/v3/coins/"+id+"/market_chart?vs_currency=usd&days=1");
+  }
+
+  public getBlogPost() {
+    return this.httpClient.get("http://localhost:3000")
   }
 
   getApiResponse(url) {

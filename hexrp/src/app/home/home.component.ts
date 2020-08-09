@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { interval, Subscription } from 'rxjs';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
+import * as firebase from 'firebase';
 
 
 
@@ -33,6 +34,7 @@ export class HomeComponent implements OnInit {
   breakpointgraph: number;
   news_data: any[];
   breakpointaboutus: any;
+  breakpointaboutuswidth: number;
 
   constructor(private HttpApiService: HttpApiService) { }
 
@@ -98,11 +100,26 @@ export class HomeComponent implements OnInit {
     this.breakpointgraph = (window.innerWidth <= 500) ? 1 : 2;
     
     this.breakpointaboutus = (window.innerWidth <= 500) ? 6 : 10;
+    
+    this.breakpointaboutuswidth = (window.innerWidth <= 500) ? 6 : 4;
 
     this.HttpApiService.sendGetRequest().subscribe((data: any[])=>{
     console.log(data);
     this.news_data = data;  
     });
+
+    this.HttpApiService.getBlogPost().subscribe((data: any[])=>{
+      console.log(data);
+      });
+  
+
+
+
+      
+    // this.HttpApiService.getBlogPost().subscribe((data: any[])=>{
+    //   console.log(data);
+    //   this.news_data = data;  
+    //   });
   }
 
   highchart(data,name){
@@ -170,11 +187,16 @@ export class HomeComponent implements OnInit {
   onResizeaboutusBox(event) {
     this.breakpointaboutus = (window.innerWidth <= 500) ? 6 : 10;
   }
+
+   
+  onResizeaboutuswidthBox(event) {
+    this.breakpointaboutuswidth = (window.innerWidth <= 500) ? 6 : 4;
+  }
   public executeSelectedChange = (event) => {
     console.log(event);
   } 
 
-  
+
 
 
 
