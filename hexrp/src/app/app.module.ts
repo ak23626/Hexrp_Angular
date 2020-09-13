@@ -12,6 +12,7 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { CoinDetailsComponent } from './coin-details/coin-details.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     LayoutComponent,
     HomeComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    CoinDetailsComponent
   ],
   imports: [
     BrowserModule,

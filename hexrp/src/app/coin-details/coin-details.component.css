@@ -1,0 +1,32 @@
+#container{
+    
+    margin-top: 100px;
+    
+}
+
+table{
+    width: 90%;
+    margin: auto;
+}
+
+th{
+    color: #0909a1;
+    font-size: 15px;
+}
+
+td{
+    color:#089fc8;
+}
+
+.positive{
+    color: green;
+}
+
+.negative{
+    color:red
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
